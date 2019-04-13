@@ -5,12 +5,12 @@
 #==========================================
 
 CC=clang
-CFLAGS=-Ofast -Wall
+CFLAGS=-Wall
 
 all: calc
 
-calc: src/test.c
-	$(CC) $(CFLAGS) -o test src/test.c
+calc: src/test.c src/calc.h src/calc.c
+	$(CC) $(CFLAGS) -o test src/test.c src/calc.c
 
 clean:
 	rm -f test
