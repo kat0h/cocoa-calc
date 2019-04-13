@@ -1,14 +1,18 @@
 /*==================
   calc.h
   ================== */ 
-
+/*
+ * 基本的な使い方
+ * setFirstNum -> setSecondNum -> 演算用関数 -> getResult
+ */
 #ifndef CALC_H
 #define CALC_H
 
 typedef struct {
     float result; 
+    float firstNum;
+    float secondNum;
 } calcData;
-
 
 /*
  * 関数名 calcInit
@@ -27,13 +31,14 @@ int calcInit(calcData* data);
  */
 float getResult(calcData* data);
 
-/*
- * 関数名 setResult
- * 引数   calcData&, float
- * 戻り値 float
- * セッター
- * セットした値を返す
- */
-float setResult(calcData* data, float setNum);
+//セッター
+float setFirstNum(calcData* data, float num); 
+float setSecondNum(calcData* data, float num);
+
+//計算
+int addition(calcData* data);
+int subtraction(calcData* data);
+int multiplication(calcData* data);
+int division(calcData* data);
 
 #endif

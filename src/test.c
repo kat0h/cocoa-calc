@@ -6,9 +6,12 @@ int main(){
     calcData mydata;
     printf("calcInit(&mydata)\n");
     calcInit(&mydata);
-    printf("setResult(&mydata, 1.20)\n");
-    setResult(&mydata, 1.20);
-    printf("mydata.firstNum : %f\n", getResult(&mydata)); 
+    printf("setFirstNum 23.0\nsetSecondNum 34.0\n");
+    setFirstNum(&mydata, 23.0);
+    setSecondNum(&mydata, 34.0);
+    division(&mydata);
+    printf("result :%f\n", getResult(&mydata));
+    printf("mydata.result: %f\n", getResult(&mydata)); 
     return 0;
 }
 
