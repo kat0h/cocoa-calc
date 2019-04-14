@@ -14,6 +14,7 @@ class ViewController: NSViewController {
     var nowInputDataNum = 1
     var nowInputData:Float = 0.0
     var calcOperator:Int=0
+    var dotPlace:Float=0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,58 +33,45 @@ class ViewController: NSViewController {
         nowInputData=0
         nowInputDataNum=1
         calcOperator=0
+        dotPlace=0
         calcInit(&data)
         displayRefresh()
     }
     @IBAction func CButton(_ sender: Any) {
         if nowInputDataNum==1{
-            nowInputData=0
             setFirstNum(&data, 0.0)
         }else{
-            nowInputData=0
             setSecondNum(&data, 0.0)
         }
+        nowInputData=0
+        dotPlace=0
         displayRefresh()
     }
     @IBAction func PlusOrMinusButton(_ sender: Any) {
         nowInputData=nowInputData * -1
         displayRefresh()
     }
-    @IBAction func PlusButton(_ sender: Any) {
+    func setOperator(op:Int){
         if nowInputDataNum==1{
             setFirstNum(&data, nowInputData)
             nowInputDataNum=2
-            calcOperator=1
+            calcOperator=op
             nowInputData=0
+            dotPlace=0
             displayRefresh()
         }
+    }
+    @IBAction func PlusButton(_ sender: Any) {
+        setOperator(op: 1)
     }
     @IBAction func MinusButton(_ sender: Any) {
-        if nowInputDataNum==1{
-            setFirstNum(&data, nowInputData)
-            nowInputDataNum=2
-            calcOperator=2
-            nowInputData=0
-            displayRefresh()
-        }
+        setOperator(op: 2)
     }
     @IBAction func AsteliskButton(_ sender: Any) {
-        if nowInputDataNum==1{
-            setFirstNum(&data, nowInputData)
-            nowInputDataNum=2
-            calcOperator=3
-            nowInputData=0
-            displayRefresh()
-        }
+        setOperator(op: 3)
     }
     @IBAction func SlashButton(_ sender: Any) {
-        if nowInputDataNum==1{
-            setFirstNum(&data, nowInputData)
-            nowInputDataNum=2
-            calcOperator=4
-            nowInputData=0
-            displayRefresh()
-        }
+        setOperator(op: 4)
     }
     @IBAction func EqualButton(_ sender: Any) {
         switch calcOperator {
@@ -106,12 +94,25 @@ class ViewController: NSViewController {
         nowInputData=0
         nowInputDataNum=1
         calcOperator=0
+        dotPlace=0
         calcInit(&data)
         setFirstNum(&data, resultnum)
         nowInputData=resultnum
         displayRefresh()
     }
     @IBAction func DotButton(_ sender: Any) {
+        if dotPlace==0{
+            dotPlace=1
+        }
+    }
+    func pushNumButton(num:Int, nowdata:Float) -> Float{
+        if dotPlace>0{
+            dotPlace*=10
+            print(Float(num)/Float(dotPlace))
+            return nowdata+Float(num)/Float(dotPlace)
+        }else{
+            return nowdata*10+Float(num)
+        }
     }
     @IBAction func OneButton(_ sender: Any) {
         nowInputData=pushNumButton(num: 1, nowdata: nowInputData)
@@ -153,11 +154,6 @@ class ViewController: NSViewController {
         nowInputData=pushNumButton(num: 0, nowdata: nowInputData)
         displayRefresh()
     }
-    
-    func pushNumButton(num:Int, nowdata:Float) -> Float{
-        return nowdata*10.0+Float(num)
-    }
-    
     @IBOutlet weak var displayLabel: NSTextField!
     func displayRefresh(){
         displayLabel.stringValue = String(nowInputData)
