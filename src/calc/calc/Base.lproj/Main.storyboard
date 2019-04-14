@@ -717,7 +717,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="ACButton:" target="XfG-lQ-9wD" id="D8d-HQ-L7O"/>
+                                    <action selector="ACButton:" target="XfG-lQ-9wD" id="tMs-3R-a90"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Klc-gL-DbX">
@@ -871,18 +871,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="ZeroButton:" target="XfG-lQ-9wD" id="skv-Px-2bP"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNu-ZO-cen">
-                                <rect key="frame" x="183" y="13" width="57" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vWh-E9-Fa7">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="DotButton:" target="XfG-lQ-9wD" id="UZt-jT-OKC"/>
+                                    <action selector="ZeroButton:" target="XfG-lQ-9wD" id="wdb-e0-fJY"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cqh-05-0ox">
@@ -919,7 +908,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uvO-Hp-VsT">
-                                <rect key="frame" x="222" y="233" width="37" height="17"/>
+                                <rect key="frame" x="18" y="233" width="444" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="SLq-HB-7RO">
                                     <font key="font" metaFont="system"/>
@@ -927,8 +916,22 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNu-ZO-cen">
+                                <rect key="frame" x="183" y="15" width="57" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vWh-E9-Fa7">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="DotButton:" target="XfG-lQ-9wD" id="UZt-jT-OKC"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="uvO-Hp-VsT" id="SqM-2L-aBh"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
