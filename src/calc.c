@@ -4,13 +4,15 @@ int calcInit(calcData* data){
     data->result=0;
     data->firstNum=0;
     data->secondNum=0;
-    return 0; 
+    return 0;
 }
 
 float getResult(calcData* data){
     return data->result;
 }
 
+
+//Hello
 
 float setFirstNum(calcData* data, float num){
     data->firstNum=num;
