@@ -7,7 +7,7 @@ Open "cocoa-calc/src/calc/calc.xcodeproj" in xcode then, you can build.
 
 # explain
 GUI : Swift cocoa  
-Culculatin : c (Connected to swit as Objective-c)?
+Oparation : c
 
 # screen shot
 ![Alt text](/assets/image1.png)
