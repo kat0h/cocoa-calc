@@ -6,7 +6,7 @@ Open "cocoa-calc/src/calc/calc.xcodeproj" in xcode then, you can build.
 (build passed with Xcode 10.2.1)
 
 # explain
-GUI : Swift cocoa
+GUI : Swift cocoa  
 Culculatin : c (Connected to swit as Objective-c)?
 
 # screen shot
