@@ -1,5 +1,5 @@
 # cocoa-calc
-A cocoa calculator application by c.
+cocoaによる電卓アプリ
 
 # build
 Open "cocoa-calc/src/calc/calc.xcodeproj" in xcode then, you can build.
